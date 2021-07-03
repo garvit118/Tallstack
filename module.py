@@ -13,13 +13,9 @@ def open_web(url):
     pyttsx3.speak('Thank you regards david')
 
 
-def login(sender,password):
-    smtplib.SMTP.login(sender,password)
-    pyttsx3.speak('Thank you regards david')
-
-
-def send_mail_gmail(sender, reciever,message):
-    server = smtplib.SMTP(sender,587)
+def send_mail_gmail(sender, reciever,message,password):
+    server = smtplib.SMTP('smtp.gmail.com',587)
+    server.login(sender,password)
     server.sendmail(sender,reciever,message)
     pyttsx3.speak('Thank you regards david')
 
